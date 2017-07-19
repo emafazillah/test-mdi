@@ -1,0 +1,78 @@
+{
+  "name": "test-mdi",
+  "version": "0.0.0-development",
+  "description": "as cute as bunny",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emafazillah/test-mdi.git"
+  },
+  "author": {
+    "name": "ema",
+    "email": "gatsu2811@gmail.com",
+    "url": "https://emafazillah.github.io"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  },
+  "scripts": {
+    "start": "nps --no-scripts",
+    "commitmsg": "opt --in commit-msg --exec \"validate-commit-msg\"",
+    "precommit": "lint-staged && flow --quiet",
+    "test": "nps test"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "eslint --fix",
+      "jest --findRelatedTests",
+      "git add"
+    ]
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "all-contributors-cli": "^4.3.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-bunny": "^2.1.2",
+    "flow-bin": "^0.50.0",
+    "flow-typed": "^2.1.2",
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "lint-staged": "^4.0.1",
+    "nps": "^5.5.0",
+    "nps-utils": "^1.2.0",
+    "opt-cli": "^1.5.1",
+    "prettier": "^1.5.2",
+    "validate-commit-msg": "^2.12.2"
+  },
+  "keywords": [
+    "🐰"
+  ]
+}
