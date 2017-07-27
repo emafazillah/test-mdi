@@ -1,7 +1,0 @@
-build
-dist
-public
-coverage
-flow-typed
-.opt-in
-.opt-out

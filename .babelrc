@@ -1,11 +1,6 @@
 {
-  "presets": [
-    ["env", {
-      "targets": { "node": 4 }
-    }],
-    "flow"
-  ],
-  "plugins": [
-    "add-module-exports"
-  ]
+    "presets": ["es2015"],
+    "plugins": [
+      "transform-class-properties"
+    ]
 }
