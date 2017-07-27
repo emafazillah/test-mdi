@@ -45,7 +45,7 @@
 /* inject:css */
 @import 'admin/admin.css';
 @import 'main/main.css';
+@import 'vsm6000s/vsm6000s.css';
 @import '../components/footer/footer.css';
 @import '../components/modal/modal.css';
-@import '../components/oauth-buttons/oauth-buttons.css';
 /* endinject */
