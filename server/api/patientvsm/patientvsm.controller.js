@@ -1,17 +1,17 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/vsm6000s              ->  index
- * POST    /api/vsm6000s              ->  create
- * GET     /api/vsm6000s/:id          ->  show
- * PUT     /api/vsm6000s/:id          ->  upsert
- * PATCH   /api/vsm6000s/:id          ->  patch
- * DELETE  /api/vsm6000s/:id          ->  destroy
+ * GET     /api/patientvsms              ->  index
+ * POST    /api/patientvsms              ->  create
+ * GET     /api/patientvsms/:id          ->  show
+ * PUT     /api/patientvsms/:id          ->  upsert
+ * PATCH   /api/patientvsms/:id          ->  patch
+ * DELETE  /api/patientvsms/:id          ->  destroy
  */
 
 'use strict';
 
 import jsonpatch from 'fast-json-patch';
-import {Vsm6000} from '../../sqldb';
+import {Patientvsm} from '../../sqldb';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -64,16 +64,16 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Vsm6000s
+// Gets a list of Patientvsms
 export function index(req, res) {
-  return Vsm6000.findAll()
+  return Patientvsm.findAll()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Vsm6000 from the DB
+// Gets a single Patientvsm from the DB
 export function show(req, res) {
-  return Vsm6000.find({
+  return Patientvsm.find({
     where: {
       _id: req.params.id
     }
@@ -83,20 +83,20 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
-// Creates a new Vsm6000 in the DB
+// Creates a new Patientvsm in the DB
 export function create(req, res) {
-  return Vsm6000.create(req.body)
+  return Patientvsm.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Upserts the given Vsm6000 in the DB at the specified ID
+// Upserts the given Patientvsm in the DB at the specified ID
 export function upsert(req, res) {
   if(req.body._id) {
     Reflect.deleteProperty(req.body, '_id');
   }
 
-  return Vsm6000.upsert(req.body, {
+  return Patientvsm.upsert(req.body, {
     where: {
       _id: req.params.id
     }
@@ -105,12 +105,12 @@ export function upsert(req, res) {
     .catch(handleError(res));
 }
 
-// Updates an existing Vsm6000 in the DB
+// Updates an existing Patientvsm in the DB
 export function patch(req, res) {
   if(req.body._id) {
     Reflect.deleteProperty(req.body, '_id');
   }
-  return Vsm6000.find({
+  return Patientvsm.find({
     where: {
       _id: req.params.id
     }
@@ -121,9 +121,9 @@ export function patch(req, res) {
     .catch(handleError(res));
 }
 
-// Deletes a Vsm6000 from the DB
+// Deletes a Patientvsm from the DB
 export function destroy(req, res) {
-  return Vsm6000.find({
+  return Patientvsm.find({
     where: {
       _id: req.params.id
     }

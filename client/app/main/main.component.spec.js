@@ -7,18 +7,21 @@ import {
 
 describe('Component: MainComponent', function() {
   beforeEach(angular.mock.module(main));
+  beforeEach(angular.mock.module('stateMock'));
 
   var scope;
   var mainComponent;
+  var state;
   var $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope) {
+  beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope, $state) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
+    state = $state;
     mainComponent = $componentController('main', {
       $http,
       $scope: scope

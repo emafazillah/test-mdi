@@ -1,9 +1,10 @@
 'use strict';
 
-export default function routes($routeProvider) {
+export default function routes($stateProvider) {
   'ngInject';
 
-  $routeProvider.when('/', {
+  $stateProvider.state('main', {
+    url: '/',
     template: '<main></main>'
   });
 }

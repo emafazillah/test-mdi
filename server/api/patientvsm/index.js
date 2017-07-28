@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./vsm6000.controller');
+var controller = require('./patientvsm.controller');
 
 var router = express.Router();
 

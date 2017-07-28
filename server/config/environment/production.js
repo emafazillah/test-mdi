@@ -14,12 +14,24 @@ module.exports = {
     || process.env.PORT
     || 8080,
 
+  /*
   sequelize: {
     uri: process.env.SEQUELIZE_URI
       || 'sqlite://',
     options: {
       logging: false,
       storage: 'dist.sqlite',
+      define: {
+        timestamps: false
+      }
+    }
+  }
+  */
+  sequelize: {
+    uri: process.env.SEQUELIZE_URI
+      || 'mysql://root:root123@localhost:3306/integration_server',
+    options: {
+      logging: false,
       define: {
         timestamps: false
       }

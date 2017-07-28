@@ -8,11 +8,22 @@ module.exports = {
   mongo: {
     uri: 'mongodb://localhost/testmdi-test'
   },
+  /*
   sequelize: {
     uri: 'sqlite://',
     options: {
       logging: false,
       storage: 'test.sqlite',
+      define: {
+        timestamps: false
+      }
+    }
+  }
+  */
+  sequelize: {
+    uri: 'mysql://root:root123@localhost:3306/integration_server',
+    options: {
+      logging: false,
       define: {
         timestamps: false
       }

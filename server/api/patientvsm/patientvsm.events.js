@@ -1,15 +1,15 @@
 /**
- * User model events
+ * Patientvsm model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-import {User} from '../../sqldb';
-var UserEvents = new EventEmitter();
+var Patientvsm = require('../../sqldb').Patientvsm;
+var PatientvsmEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-UserEvents.setMaxListeners(0);
+PatientvsmEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -19,20 +19,20 @@ var events = {
 };
 
 // Register the event emitter to the model events
-function registerEvents(User) {
+function registerEvents(Patientvsm) {
   for(var e in events) {
     let event = events[e];
-    User.hook(e, emitEvent(event));
+    Patientvsm.hook(e, emitEvent(event));
   }
 }
 
 function emitEvent(event) {
   return function(doc, options, done) {
-    UserEvents.emit(`${event}:${doc._id}`, doc);
-    UserEvents.emit(event, doc);
+    PatientvsmEvents.emit(event + ':' + doc._id, doc);
+    PatientvsmEvents.emit(event, doc);
     done(null);
   };
 }
 
-registerEvents(User);
-export default UserEvents;
+registerEvents(Patientvsm);
+export default PatientvsmEvents;

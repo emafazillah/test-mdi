@@ -6,6 +6,7 @@
 module.exports = {
 
   // Sequelize connection opions
+  /*
   sequelize: {
     uri: 'sqlite://',
     options: {
@@ -16,8 +17,18 @@ module.exports = {
       }
     }
   },
+  */
+  sequelize: {
+    uri: 'mysql://root:root123@localhost:3306/integration_server',
+    options: {
+      logging: false,
+      define: {
+        timestamps: false
+      }
+    }
+  },
 
   // Seed database on startup
-  seedDB: true
+  //seedDB: true
 
 };
