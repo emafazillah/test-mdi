@@ -21,7 +21,7 @@ module.exports = {
   }
   */
   sequelize: {
-    uri: 'mysql://root:root123@localhost:3306/integration_server',
+    uri: 'mysql://root:root@123@localhost:3306/integration_server',
     options: {
       logging: false,
       define: {

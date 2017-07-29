@@ -29,7 +29,7 @@ module.exports = {
   */
   sequelize: {
     uri: process.env.SEQUELIZE_URI
-      || 'mysql://root:root123@localhost:3306/integration_server',
+      || 'mysql://root:root@123@localhost:3306/integration_server',
     options: {
       logging: false,
       define: {
