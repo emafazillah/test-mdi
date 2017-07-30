@@ -10,7 +10,8 @@ import Sequelize from 'sequelize';
 
 var db = {
   Sequelize,
-  sequelize: new Sequelize(config.sequelize.uri, config.sequelize.options)
+  //sequelize: new Sequelize(config.sequelize.uri, config.sequelize.options)
+  sequelize: new Sequelize(config.sequelize.uri)
 };
 
 // Insert models below

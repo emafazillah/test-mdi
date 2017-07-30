@@ -2,7 +2,7 @@
 
 export default function(sequelize, DataTypes) {
   return sequelize.define('Patientvsm', {
-	id: {
+	_id: {
 	  type: DataTypes.BIGINT,
 	  allowNull: false,
 	  primaryKey: true,
@@ -26,6 +26,14 @@ export default function(sequelize, DataTypes) {
 	bmi: DataTypes.STRING,
 	iddevice: {
 		type: DataTypes.BIGINT,
+		allowNull: false
+	},
+	createdAt: {
+		type: DataTypes.DATE,
+		allowNull: false
+	},
+	updatedAt: {
+		type: DataTypes.DATE,
 		allowNull: false
 	}
   });

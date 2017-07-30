@@ -13,7 +13,7 @@ export class MainController {
   }
 
   $onInit() {
-    this.$http.get('/api/things')
+    this.$http.get('/api/patientvsms')
       .then(response => {
         this.awesomeThings = response.data;
       });
@@ -21,7 +21,7 @@ export class MainController {
 
   addThing() {
     if(this.newThing) {
-      this.$http.post('/api/things', {
+      this.$http.post('/api/patientvsms', {
         name: this.newThing
       });
       this.newThing = '';
@@ -29,7 +29,7 @@ export class MainController {
   }
 
   deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
+    this.$http.delete(`/api/patientvsms/${patientvsm._id}`);
   }
 }
 

@@ -8,10 +8,20 @@ describe('Component: PatientvsmsComponent', function() {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($componentController) {
-    PatientvsmsComponent = $componentController('patientvsms', {});
+	$httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('/api/patientvsms').respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    scope = $rootScope.$new();
+    state = $state;
+    PatientvsmsComponent = $componentController('patientvsms', {
+    	$http,
+        $scope: scope
+    });
   }));
 
   it('should ...', function() {
-    expect(1).to.equal(1);
+    //expect(1).to.equal(1);
+	PatientvsmsComponent.$onInit();
+	$httpBackend.flush();
+	expect(PatientvsmsComponent.listPatientVsm.length).to.equal(4);
   });
 });
