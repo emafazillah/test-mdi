@@ -1,17 +1,14 @@
 'use strict';
-const angular = require('angular');
-
-const uiRouter = require('angular-ui-router');
-
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 import routes from './patientvsms.routes';
 
 export class PatientvsmsComponent {
-  
+	
   listPatientVsm = [];
-  newPatientVsm = "";
-  
+	
   /*@ngInject*/
-  constructor() {
+  constructor($http) {
 	  this.$http = $http;
   }
   
@@ -21,13 +18,13 @@ export class PatientvsmsComponent {
         this.listPatientVsm = response.data;
       });
   }
+  
 }
 
 export default angular.module('testMdiApp.patientvsms', [uiRouter])
   .config(routes)
   .component('patientvsms', {
     template: require('./patientvsms.html'),
-    controller: PatientvsmsComponent,
-    controllerAs: 'patientvsmsCtrl'
+    controller: PatientvsmsComponent
   })
   .name;

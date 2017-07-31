@@ -1,5 +1,227 @@
-<div ng-include="components/navbar/navbar.html">
-	<div class="col-md-12">
-		This is the patientvsms view.
+<div class="container">
+	<!-- Patient Details -->
+	<div class="panel panel-default panel-primary">
+		<div class="panel-heading">+ PATIENT INFO</div>
+		<div id="patientDetails" class="panel-body">
+			<div class="row">
+				<div class="col-sm-1">
+					<img src="assets/images/yeoman.png" class="img-responsive" alt="mohammed bin lee" />
+				</div>
+				<div class="col-sm-8">
+					<div class="col-sm-2" style="font-size: 1.2em; font-weight: bold">Mohamed Bin Lee</div>
+					<div class="col-sm-3">
+						<ul class="list-unstyled">
+							<li>810204085611 (New IC)</li>
+							<li>HRPB24354234 (MRN)</li>
+							<li>27 Years Male</li>
+						</ul>
+					</div>
+					<div class="col-sm-7">
+						<ul class="list-unstyled">
+							<li><strong>Location :</strong> WAD (Ophthalmology) BED 06 (Third Class)</li>
+							<li><strong>Encounter Data & Time :</strong> 04/09/2016 09:32</li>
+							<li><strong>Admission Type :</strong> Elective</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<ul class="list-unstyled" style="color: red">
+						<li><strong>Allergy :</strong> Paracetamol, Onion, Bee venom</li>
+						<li><strong>Alert :</strong> Epilepsy, High risk for fall</li>
+						<li><strong>Percaution :</strong> Contact (MRSA)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- Clerking Notes -->
+	<div class="panel panel-default panel-primary">
+		<div class="panel-heading" role="tab" id="clerkingNoteHeading">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse"
+					href="#collapseClearkingNote" aria-expanded="true"
+					aria-controls="collapseClearkingNote">+ ETD CHEST PAIN
+					CLERKING NOTE</a>
+			</h4>
+		</div>
+		<div id="collapseClearkingNote" class="panel-collapse collapse in"
+			role="tabpanel" aria-labelledby="clerkingNoteHeading">
+			<div id="clerkingNotes" class="panel-body">
+				<div class="row">
+					<div class="col-sm-2">
+						<strong>SEEN DATE AND TIME: </strong>
+					</div>
+					<div class="col-sm-2">
+						<input type="date">
+					</div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-sm-2">
+						<strong>SEEN BY: </strong>
+					</div>
+					<div class="col-sm-10">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th class="text-center">No</th>
+									<th class="text-center">Name</th>
+									<th class="text-center">Designation</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">Dr. Adam Malik (12345)</td>
+									<td class="text-center">Pegawai Perubatan (UD48)</td>
+								</tr>
+								<tr>
+									<td class="text-center">2</td>
+									<td class="text-center">Dr. Wan Kadir Wan Karim (34556)</td>
+									<td class="text-center">Pegawai Perubatan (UD48)</td>
+								</tr>
+								<tr>
+									<td class="text-center">3</td>
+									<td class="text-center">Dr. Siti Khadijah Bt. Mukhriz (12346)</td>
+									<td class="text-center">Pegawai Perubatan (UD48)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-sm-2">
+						<strong>DISCUSSED DATE AND TIME: </strong>
+					</div>
+					<div class="col-sm-2">
+						<input type="date">
+					</div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2"></div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-sm-2">
+						<strong>DISCUSSED WITH: </strong>
+					</div>
+					<div class="col-sm-10">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th class="text-center">No</th>
+									<th class="text-center">Name</th>
+									<th class="text-center">Designation</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">Nik Yahya Nik Abbas (34557)</td>
+									<td class="text-center">Pakar Perubatan (UD54)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-sm-2">
+						<strong>CHIEF COMPLAINTS: </strong>
+					</div>
+					<div class="col-sm-10">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th class="text-center">No</th>
+									<th class="text-center">Category</th>
+									<th class="text-center">Chief Complaint</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">Cardiovascular</td>
+									<td class="text-center">Chest Pain-cardiac features</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- Vital Signs History -->
+	<div class="panel panel-default panel-primary">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" href="#collapseOne"
+					aria-expanded="true" aria-controls="collapseOne">+ VITAL SIGNS HISTORY</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in"
+			role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th class="text-center">No.</th>
+							<th class="text-center">BMI</th>
+							<th class="text-center">Date</th>
+							<th class="text-center">Diastolic</th>
+							<th class="text-center">Height</th>
+							<th class="text-center">Heart Rate</th>
+							<th class="text-center">MAP</th>
+							<th class="text-center">SpO2</th>
+							<th class="text-center">Pain</th>
+							<th class="text-center">Patient ID</th>
+							<th class="text-center">Pulse</th>
+							<th class="text-center">Respiration</th>
+							<th class="text-center">Systolic</th>
+							<th class="text-center">Temperature</th>
+							<th class="text-center">Weight</th>
+							<th class="text-center" colspan="2">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="patientvsm in $ctrl.listPatientVsm">
+							<td>{{patientvsm._id}}</td>
+							<td>{{patientvsm.bmi}}</td>
+							<td>{{patientvsm.date}}</td>
+							<td>{{patientvsm.diastolic}}</td>
+							<td>{{patientvsm.height}}</td>
+							<td>{{patientvsm.hr}}</td>
+							<td>{{patientvsm.map}}</td>
+							<td>{{patientvsm.o2sat}}</td>
+							<td>{{patientvsm.pain}}</td>
+							<td>{{patientvsm.patientid}}</td>
+							<td>{{patientvsm.pulse}}</td>
+							<td>{{patientvsm.respiration}}</td>
+							<td>{{patientvsm.systolic}}</td>
+							<td>{{patientvsm.temperature}}</td>
+							<td>{{patientvsm.weight}}</td>
+							<td><button class="btn btn-danger" ng-click="">Remove</button></td>
+							<td><button class="btn btn-warning" ng-click="">Edit</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
+	<!-- 
+	<div class="row">
+	  <div class="col-lg-12">
+	    <h1 class="page-header">Vital Signs:</h1>
+	    <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="patientvsm in $ctrl.listPatientVsm">
+	      <li><a href="#" uib-tooltip="{{patientvsm._id}}">{{patientvsm.systolic}}</a></li>
+	    </ul>
+	  </div>
+	</div>
+	-->
 </div>
